@@ -206,11 +206,15 @@ data:
             validate_certs: false
             status_code:
               - 201
+              - 400
               - 409
           retries: 10
           delay: 5
           register: r_create_project_result
-          until: r_create_project_result.status in [201, 409]
+          until: r_create_project_result.status in [201, 400, 409]
+          failed_when:
+            - r_create_project_result.status == 400
+            - "'has already been taken' not in (r_create_project_result.json | default({}) | string)"
 
         - name: Look up project {{ $item1.name }}
           ansible.builtin.uri:
