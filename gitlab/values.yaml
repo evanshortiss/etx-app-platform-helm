@@ -100,35 +100,35 @@ gitlab:
         - id: dev2
         - id: platform-engineer
   templates:
-    - group: rhdh
-      project: template-quarkus-simple
-      branch: main
-      templates:
-        - template.yaml
-    - group: rhdh
-      project: import-existing-app-template
-      branch: main
-      templates:
-        - template.yaml
-    - group: rhdh
-      project: import-existing-api-template
-      branch: main
-      templates:
-        - template.yaml
-    - group: global
-      project: global-techdocs
-      branch: main
-      templates:
-        - catalog-info.yaml
-        - mkdocs.yaml
-    - group: rhdh
-      project: template-developer-self-service
-      branch: main
-      templates:
-        - postgres15/template.yaml
-        - namespace/template-small.yaml
-        - namespace/template-medium.yaml
-        - namespace/template-large.yaml
+    # - group: rhdh
+    #   project: template-quarkus-simple
+    #   branch: main
+    #   templates:
+    #     - template.yaml
+    # - group: rhdh
+    #   project: import-existing-app-template
+    #   branch: main
+    #   templates:
+    #     - template.yaml
+    # - group: rhdh
+    #   project: import-existing-api-template
+    #   branch: main
+    #   templates:
+    #     - template.yaml
+    # - group: global
+    #   project: global-techdocs
+    #   branch: main
+    #   templates:
+    #     - catalog-info.yaml
+    #     - mkdocs.yaml
+    # - group: rhdh
+    #   project: template-developer-self-service
+    #   branch: main
+    #   templates:
+    #     - postgres15/template.yaml
+    #     - namespace/template-small.yaml
+    #     - namespace/template-medium.yaml
+    #     - namespace/template-large.yaml
     # - group: rhdh
     #   project: orchestrator-workflows
     #   branch: main
