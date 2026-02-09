@@ -16,7 +16,7 @@ spec:
       restartPolicy: OnFailure
       containers:
         - name: sa-token-writer
-          image: quay.io/redhat-gpte/ee-multicloud:latest
+          image: quay.io/agnosticd/ee-multicloud:latest
           command:
             - ansible-playbook
             - /playbook/playbook.yaml

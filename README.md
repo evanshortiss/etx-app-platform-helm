@@ -73,7 +73,7 @@ Several charts use a pattern where a `ConfigMap` contains an Ansible playbook, a
 - **`redhat-developer-hub/redhat-developer-hub-prereqs/templates/cm-sa-token-writer.yaml`** — Creates a `kubernetes.io/service-account-token` Secret, waits for the token to be populated, and writes it to Vault so RHDH can use it for cluster access
 - **`redhat-developer-hub/redhat-developer-hub-config-template/templates/rhdh-config-template.yaml`** — Clones the Developer Hub config repo from GitLab, templates it with cluster-specific values, and pushes the result back
 
-These Jobs use the `quay.io/redhat-gpte/ee-multicloud` execution environment image (or `ose-cli` for simpler scripts) and follow Helm/Argo CD sync-wave ordering to ensure dependencies are ready.
+These Jobs use the `quay.io/agnosticd/ee-multicloud` execution environment image (or `ose-cli` for simpler scripts) and follow Helm/Argo CD sync-wave ordering to ensure dependencies are ready.
 
 ## Vault auto-unseal
 
