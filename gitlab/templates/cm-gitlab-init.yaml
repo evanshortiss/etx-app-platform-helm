@@ -134,11 +134,15 @@ data:
             validate_certs: false
             status_code:
               - 201
+              - 400
               - 409
           register: r_group_create
           retries: 10
           delay: 5
-          until: r_group_create.status in [201, 409]
+          until: r_group_create.status in [201, 400, 409]
+          failed_when:
+            - r_group_create.status == 400
+            - "'has already been taken' not in (r_group_create.json | default({}) | string)"
 
         - name: Look up group {{ $item.name }}
           ansible.builtin.uri:
