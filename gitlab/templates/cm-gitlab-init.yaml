@@ -103,7 +103,7 @@ data:
               - 201
               - 409
           register: r_user
-          retries: 100
+          retries: 10
           delay: 5
           until: r_user.status in [201, 409]
 {{- end }}
@@ -136,7 +136,7 @@ data:
               - 201
               - 409
           register: r_group_create
-          retries: 100
+          retries: 10
           delay: 5
           until: r_group_create.status in [201, 409]
 
@@ -171,7 +171,7 @@ data:
             status_code:
               - 201
               - 409
-          retries: 100
+          retries: 10
           delay: 5
           register: r_import
           until: r_import.status in [201, 409]
@@ -203,7 +203,7 @@ data:
             status_code:
               - 201
               - 409
-          retries: 100
+          retries: 10
           delay: 5
           register: r_create_project_result
           until: r_create_project_result.status in [201, 409]
@@ -234,7 +234,7 @@ data:
             status_code:
               - 201
               - 409
-          retries: 100
+          retries: 10
           delay: 5
           register: r_create_label
           until: r_create_label.status in [201, 409]
@@ -266,7 +266,7 @@ data:
               - 201
               - 409
           register: r_group_user
-          retries: 100
+          retries: 10
           delay: 5
           until: r_group_user.status in [201, 409] or r_group_user is skipped
           loop: '{{ "{{" }} r_users.json {{ "}}" }}'
