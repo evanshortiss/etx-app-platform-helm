@@ -174,11 +174,15 @@ data:
             validate_certs: false
             status_code:
               - 201
+              - 400
               - 409
           retries: 10
           delay: 5
           register: r_import
           until: r_import.status in [201, 409]
+          failed_when:
+            - r_import.status == 400
+            - "'has already been taken' not in (r_import.json | default({}) | string)"
           loop:
 {{- range $item1 := $item.repo }}
             - name: {{ $item1.name }}
