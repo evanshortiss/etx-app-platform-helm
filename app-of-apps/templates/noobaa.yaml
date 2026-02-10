@@ -14,6 +14,7 @@ spec:
         - /metadata/labels
         - /spec/coreResources
         - /spec/dbResources
+        - /spec/endpoints
   source:
     path: noobaa
     repoURL: {{ .Values.gitops.repoURL }}
