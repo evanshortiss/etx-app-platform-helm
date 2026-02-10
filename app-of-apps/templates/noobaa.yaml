@@ -7,6 +7,13 @@ spec:
     namespace: {{ .Values.noobaa.namespace }}
     server: https://kubernetes.default.svc
   project: default
+  ignoreDifferences:
+    - group: noobaa.io
+      kind: NooBaa
+      jsonPointers:
+        - /metadata/labels
+        - /spec/coreResources
+        - /spec/dbResources
   source:
     path: noobaa
     repoURL: {{ .Values.gitops.repoURL }}
