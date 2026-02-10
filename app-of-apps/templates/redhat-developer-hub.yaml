@@ -41,6 +41,7 @@ spec:
           gitops:
             namespace: {{ .Values.rhdh.application.gitops.namespace }}
           helm:
+            version: {{ .Values.rhdh.application.helm.version }}
             values:
               git:
                 host: {{ .Values.rhdh.application.helm.values.git.host }}

@@ -119,6 +119,7 @@ rhdh:
     gitops:
       namespace: openshift-gitops
     helm:
+      version: 1.8.2
       values:
         git:
           host: ""
